@@ -1,8 +1,6 @@
-# Welcome!
+Welcome!
 
 This is a game to teach you the basics of using a POSIX (Linux, BSD, UNIX) terminal.
-
-## Try it on your machine
 
 To start playing, open a terminal.
 
@@ -34,18 +32,7 @@ cat scroll
 You are now playing the game.
 May the gods save you.
 
-## Try it online with mybinder
-
-- Follow this link: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gl/nthiery%2Fbashcrawl/HEAD).
-- Wait a few seconds to a minute until the launcher appears.
-- Click on the Terminal icon.
-
-Note: mybinder sessions are temporary; the game is reinitialized each
-time you disconnect.
-[Learn more about the mybinder service](https://mybinder.readthedocs.io/en/latest/).
-
 ## NOTES FOR macOS X
-
 It appears that there is a problem with the standard `Archive Utility` that is called from `Finder` when a zip archive is double-clicked to extract to the current folder, if you're downloading the archive from GitLab rather than using git's `clone` facility to download the game.  You may find that all of the files in the destination folder are set to be executable.  This will cause great confusion as you play the game as intended, because every plain text file will be indistiguishable from executable scripts.  Here's how to avoid this problem:
 
 1.  Open your favorite terminal emulator app (e.g. `Terminal.app` or `iTerm2`).
