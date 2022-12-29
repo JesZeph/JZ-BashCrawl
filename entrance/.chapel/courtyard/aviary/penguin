@@ -96,9 +96,8 @@ EOF
     read RESP
 
     if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
-        if grep  --quiet --only-matching fish <<< $I; then
+        if grep  --only-matching fish <<< $I; then
             cat << EOF
-
 You toss the fish at the penguin,  which catches the fish
 mid-air and gobbles it down.
 
