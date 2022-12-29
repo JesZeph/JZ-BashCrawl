@@ -31,6 +31,7 @@ if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
 '--------------------------------'
 EOF
    read RESP
+<<<<<<< HEAD
 =======
    echo ".--------------------------------,"
    echo "|       Welcome to POSIX         |"
@@ -40,6 +41,8 @@ EOF
 <<<<<<< HEAD
 >>>>>>> parent of 5f6e3f7 (revert commit)
 
+=======
+>>>>>>> parent of 9d9fc78 (Merge branch 'master' of gitlab.com:slackermedia/bashcrawl)
    if [ "$RESP" = "$USER" ]; then
        cat << EOF > armour
 #!/bin/bash
