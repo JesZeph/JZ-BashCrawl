@@ -75,6 +75,7 @@ resolve() {
              fi' > platinum
        chmod +x platinum
     else
+<<<<<<< HEAD
 	echo "Your sword swings harmlessly through the air."
 	echo "You take 5 points damage. Deduct this from your HP variable:"
 	echo 'let "HP=HP-5"'
@@ -89,6 +90,28 @@ resolve() {
     fi
 	printf "\n"
 	roll
+=======
+        cat << EOF
+Your sword swings harmlessly through the air.  You take 5
+points damage. Deduct this from your HP variable:  
+
+let "HP=HP-5"
+
+EOF
+        let HP=HP-5
+        if [ "$HP" -le 0 ]; then
+            cat << EOF
+You suddenly feel cold, the life force draining from your
+body.  You have been slain by the ghost of an evil wizard.
+
+GAME OVER!
+
+EOF
+            gameover
+            exit 1
+        fi
+	    roll
+>>>>>>> parent of b797d4c (revert commit)
     fi
 }
 
