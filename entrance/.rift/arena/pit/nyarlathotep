@@ -84,6 +84,7 @@ EOF
     fi
     
     if [[ $MONSTER -lt $NUM ]]; then
+<<<<<<< HEAD
         cat << EOF
 A hit! A palpable hit!  You have vanquished the elder god of
 chaos!
@@ -126,6 +127,22 @@ And eventually, we hope to see you contribute your own
 dungeon rooms to Bashcrawl!
 
 EOF
+=======
+       echo "A hit! A palpable hit!"
+       echo "You have vanquished the elder god of chaos!"
+       echo "\#\!/bin/sh" > treasure
+       echo "echo 'You have found a lock of the **hair** of a god!'" > treasure
+       echo "echo 'Add it to your inventory.'" >> treasure
+       chmod +x treasure
+       echo "\#\!/bin/sh" > platinum
+       echo 'You have found an enchanted *bracelet* of chaotic necromancy!'" >> platinum
+       echo " You have reached the end of the game." > end
+       echo " You know enough Bash now to use it for every day activities." >> end
+       echo " Practice makes perfect, so be sure to use it often. " >> end
+       echo " For continued Bash tips, visit opensource.com often." >> end
+       echo " And eventually, we hope to see you contribute " >> end
+       echo " your own dungeon rooms to Bash crawl\!" >> end
+>>>>>>> parent of 13a4212 (fix bugs in nyarlathotep)
 
     else
         cat << EOF
@@ -161,6 +178,7 @@ EOF
 printf "Are you armed? y/n  "
 read RESP
 
+<<<<<<< HEAD
 if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
 
     if grep  --quiet --only-matching "sword" <<< $I; then
@@ -173,6 +191,11 @@ god of chaos, senses your weakness.
 EOF
         flee
     fi
+=======
+if [ $RESP = "y" -o $RESP = "Y" ];then
+    roll
+    resolve
+>>>>>>> parent of 13a4212 (fix bugs in nyarlathotep)
 else
     flee
 fi
