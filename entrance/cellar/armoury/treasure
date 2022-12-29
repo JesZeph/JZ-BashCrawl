@@ -13,18 +13,10 @@
 # We're happy to provide hints.
 # 
 cat << EOF
-<<<<<<< HEAD
 You have found a gleaming silver **sword**!  You marvel at
 its craftsmanship, and you recall tales from your childhood
 of the great mystic king Rannismir who bore such a sword to
 protect the kingdom from the undead.
-=======
-You have found a gleaming silver **sword**!
-You marvel at its craftmanship, and you recall
-tales from your childhood of the great
-mystic king Rannismir who bore such a sword to
-protect the kingdom from undead.
->>>>>>> parent of d61a18c (Set textwidth to 60, and fixed heredoc wrap width)
 
 Add this item to your inventory:
 
