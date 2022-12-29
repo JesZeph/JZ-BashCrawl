@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cat >> ~/.bashrc << EOF
+export PS1="\[\033[01;34m\]\w\[\033[00m\]\$ "
+cd entrance
+cat ../binder/welcome_message
+EOF
+
+exec "$@"
