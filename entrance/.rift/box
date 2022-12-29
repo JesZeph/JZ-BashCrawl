@@ -48,9 +48,11 @@ You have found magickal armour.  Add it to your inventory.
 
 eof
 touch .armour
+chmod +x armour
 touch .bless
 
 EOF
+<<<<<<< HEAD
         chmod +x armour
         echo "You feel magic in the air."
 =======
@@ -68,6 +70,9 @@ EOF
 
        echo "You feel magic in the air."
 >>>>>>> parent of b3d3e80 (Converted multiline output to heredoc)
+=======
+       echo "You feel magic in the air."
+>>>>>>> parent of 42687b2 (Fixed armour creation code)
    fi
 else
    echo "The box is full of mystery, and it's often"
