@@ -65,7 +65,23 @@ if grep --quiet UP .direction; then
 You hear a slight whirring, and feel a heaviness at your
 feet, with a vague, disquieting sense of motion.  
 
+<<<<<<< HEAD
 A magickal display reads:
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+A magickal display reads:
+=======
+A magickal display reads:  "
+>>>>>>> parent of e5e43ef (Removed spurious double-quote)
+=======
+A magickal display reads:  "
+>>>>>>> parent of e44662c (Removed spurious double-quote)
+=======
+A magical display reads:
+>>>>>>> parent of 7a0d31a (Remove "corrections" for the word "magickal".)
+>>>>>>> parent of 8a57393 (Revert "revert")
 
 EOF
     countup
@@ -86,7 +102,7 @@ else
 You hear a slight whirring, and feel a lightness at your
 feet, with a vague, disquieting sense of motion. 
 
-A magickal display reads:
+A magical display reads:
 
 EOF
     countdown
