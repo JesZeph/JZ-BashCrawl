@@ -68,7 +68,6 @@ feet, with a vague, disquieting sense of motion.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
 A magickal display reads:
 =======
 A magickal display reads:  "
@@ -76,9 +75,6 @@ A magickal display reads:  "
 =======
 A magickal display reads:  "
 >>>>>>> parent of e44662c (Removed spurious double-quote)
-=======
-A magical display reads:
->>>>>>> parent of 7a0d31a (Remove "corrections" for the word "magickal".)
 
 EOF
 =======
@@ -108,7 +104,7 @@ else
 You hear a slight whirring, and feel a lightness at your
 feet, with a vague, disquieting sense of motion. 
 
-A magical display reads:
+A magickal display reads:
 
 EOF
     countdown
