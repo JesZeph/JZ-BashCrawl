@@ -12,30 +12,25 @@
 # the scrolls. If you're stuck, go to Gitlab and create an issue.
 # We're happy to provide hints.
 # 
-echo "A metal box sits upon the ground."
-echo "It appears to be illuminated from within."
-echo "There is a window in the box."
-echo "The window is black, but there is luminescent writing."
+cat << EOF
+A metal box sits upon the ground.  It appears to be
+illuminated from within.  There is a window in the box. The
+window is black, but there is luminescent writing.
 
-<<<<<<< HEAD
 EOF
 printf "Do you want to read the writing? y/n  "
-=======
-echo "Do you want to read the writing?"
->>>>>>> parent of b3d3e80 (Converted multiline output to heredoc)
 read RESP
 
 if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
-   echo ".--------------------------------,"
-   echo "|       Welcome to POSIX         |"
-   echo "|   Enter your username:         |"
-   echo "'--------------------------------'"
-   read RESP
-<<<<<<< HEAD
-<<<<<<< HEAD
+    cat << EOF
 
-=======
->>>>>>> parent of 9d9fc78 (Merge branch 'master' of gitlab.com:slackermedia/bashcrawl)
+.--------------------------------,
+|       Welcome to POSIX         |
+|   Enter your username:         |
+'--------------------------------'
+EOF
+   read RESP
+
    if [ "$RESP" = "$USER" ]; then
        cat << EOF > armour
 #!/bin/bash
@@ -44,7 +39,7 @@ Welcome, ${USER}, to your POSIX system.  You have learnt much,
 and now you have the basic knowledge you need to become a
 truly powerful wizard.
 
-You have found magical armour.  Add it to your inventory.
+You have found magickal armour.  Add it to your inventory.
 
 eof
 touch .armour
@@ -53,25 +48,13 @@ touch .bless
 EOF
         chmod +x armour
         echo "You feel magic in the air."
-=======
-   if [ "$RESP" = $USER ]; then
-       echo '#!/bin/bash
-       echo "Welcome, $USER, to your POSIX system."
-       echo "You have learnt much, and now you have"
-       echo "the basic knowledge you need to become"
-       echo "a truly powerful wizard."
-       echo "You have found magickal armour."
-       echo "Add it to your inventory."
-       echo touch .armour' >> armour
-       chmod +x armour
-       touch .bless
-
-       echo "You feel magic in the air."
->>>>>>> parent of b3d3e80 (Converted multiline output to heredoc)
    fi
 else
-   echo "The box is full of mystery, and it's often"
-   echo "best not to look too deeply into puzzles."
+    cat << EOF
+The box is full of mystery, and it's often best not to look
+too deeply into puzzles.
+
+EOF
 fi
 
 
