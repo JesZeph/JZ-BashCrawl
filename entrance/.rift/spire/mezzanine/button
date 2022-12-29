@@ -13,12 +13,10 @@
 # We're happy to provide hints.
 # 
 
-cat << EOF
-You see a glowing red button with what appears to be an
-arrow pointing up inscribed on its face. 
-
-EOF
-printf "Are you tempted to press the button?  y/n  "
+echo "You see a glowing red button with what appears to
+      be an arrow pointing up inscribed on its face."
+echo
+echo "Are you tempted to press the button?  y/n"
 read RESP
 
 if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
