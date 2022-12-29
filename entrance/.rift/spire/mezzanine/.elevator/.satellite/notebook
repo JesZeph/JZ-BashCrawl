@@ -25,6 +25,7 @@ cat alpha beta gamma delta | base64 -d > robot
 
 base64:  invalid input
 
+<<<<<<< HEAD
 I have noticed that not every order thus will
 produce the same error, but the resulting 
 robot still does not work.  I discovered another
@@ -35,6 +36,10 @@ sha256sum -c sha256sums
 
 I will attempt every combination and document 
 the one that succeeds. 
+=======
+I will attempt every combination and 
+document the one that succeeds.  I
+>>>>>>> parent of ad7c18d (Merge branch 'master' into 'master')
 
 alpha beta delta gamma 
 alpha delta bet
