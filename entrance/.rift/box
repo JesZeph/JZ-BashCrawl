@@ -22,6 +22,7 @@ printf "Do you want to read the writing? y/n  "
 read RESP
 
 if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+<<<<<<< HEAD
     cat << EOF
 
 .--------------------------------,
@@ -30,6 +31,14 @@ if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
 '--------------------------------'
 EOF
    read RESP
+=======
+   echo ".--------------------------------,"
+   echo "|       Welcome to POSIX         |"
+   echo "|   Enter your username:         |"
+   echo "'--------------------------------'"
+   read RESP
+<<<<<<< HEAD
+>>>>>>> parent of 5f6e3f7 (revert commit)
 
    if [ "$RESP" = "$USER" ]; then
        cat << EOF > armour
