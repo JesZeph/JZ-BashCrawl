@@ -3,18 +3,6 @@
 #
 #
 #
-<<<<<<< HEAD
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
-# 
-cat << EOF
-Runes, the language of the ancient mystics that once ruled
-this land, are inscribed upon the western wall.
-
-EOF
-printf "Do you want to read them? y/n  "
-=======
 #
 #
 #
@@ -320,35 +308,30 @@ printf "Do you want to read them? y/n  "
 #
 #
 #
-echo "Runes, the language of the ancient mystics that once ruled"
-echo "this land, are inscribed upon the western wall."
-echo "Do you want to read them?"
->>>>>>> parent of e70d987 (play test fixes)
+echo "In the corner is a decaying old altar of some forgotten god."
+printf "\n"
+echo "There is a small trinket on the ground."
+echo "It looks religious in nature."
+echo "Do you want to put the trinket back on the altar?"
+printf "\n"
 read RESP
 
-if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
-    cat << EOF
-You recall the lessons of Caitlyn the Green, who taught you
-these ancient letters.  
-
-The runes are instructions on how to summon a portal that
-will allow you to walk through an invisible door contained
-in the wall.
-
-In Bash, a symbolic link (symlink) is a *shortcut* to
-another file or directory.  Create one from this room to the
-adjacent one:
-
-ln -fs ../../../chapel/courtyard/aviary/hall portal
-
-EOF
+if [ $RESP = "y" -o $RESP = "Y" ]; then
+   echo "You place the trinket upon the altar."
+   echo "You feel a gentle breeze pass through the room."
+   touch .bless
 else
-    cat << EOF
-You decide it is probably best to leave magical
-inscriptions as they are.
-
-EOF
-
+   echo "Do you want to take the trinket for yourself?"
+   read RESP
+   if [ $RESP = "y" -o $RESP = "Y" ]; then
+       echo "Remember to add the trinket to your inventory!"
+       touch .curse
+   else
+   echo "You leave the trinket where it lies."
+   echo "There is a great sadness here."
+   echo "You feel compelled to move on."
+   touch .curse
+   fi
 fi
 #
 #

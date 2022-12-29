@@ -3,18 +3,6 @@
 #
 #
 #
-<<<<<<< HEAD
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
-# 
-cat << EOF
-Runes, the language of the ancient mystics that once ruled
-this land, are inscribed upon the western wall.
-
-EOF
-printf "Do you want to read them? y/n  "
-=======
 #
 #
 #
@@ -320,37 +308,20 @@ printf "Do you want to read them? y/n  "
 #
 #
 #
-echo "Runes, the language of the ancient mystics that once ruled"
-echo "this land, are inscribed upon the western wall."
-echo "Do you want to read them?"
->>>>>>> parent of e70d987 (play test fixes)
-read RESP
-
-if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
-    cat << EOF
-You recall the lessons of Caitlyn the Green, who taught you
-these ancient letters.  
-
-The runes are instructions on how to summon a portal that
-will allow you to walk through an invisible door contained
-in the wall.
-
-In Bash, a symbolic link (symlink) is a *shortcut* to
-another file or directory.  Create one from this room to the
-adjacent one:
-
-ln -fs ../../../chapel/courtyard/aviary/hall portal
-
-EOF
+if [[ -e potion ]]; then
+   echo "You have summoned a potion from afar."
+   echo "You drink it quickly and feel a surge of strength."
+   echo "Add 5 HP to your score."
 else
-    cat << EOF
-You decide it is probably best to leave magical
-inscriptions as they are.
-
-EOF
-
+   echo "A page from a druid's tome of incantations lies on the ground."
+   echo "It reveals to you how to summon a healing potion."
+   printf "\n"
+   echo "To find a file on your system, you can use the find command."
+   echo 'Try this: find ../../../../entrance -name "potion"'
+   printf "\n"
+   echo "Once you've found a potion, copy it to this directory"
+   echo "and run this spell script again."
 fi
-#
 #
 #
 #
