@@ -13,13 +13,10 @@
 # We're happy to provide hints.
 #
 gameover () {
-    cat << EOF > corpse
-You see the corpse of a slain adventurer on the floor of the
-dungeon.  You find the following items on the corpse:  
-
-$I
-
-EOF
+    echo "You see the corpse of a slain adventurer on the floor of the dungeon." > corpse
+    echo "You find the following items on the corpse:  " >> corpse
+    echo >> corpse
+    echo $I >> corpse
     curr=`basename $PWD`
     while [ "$curr" != "entrance" ]; do
         pushd .. &> /dev/null
@@ -31,7 +28,7 @@ EOF
     $SHELL
 }
 roll() {
-    printf "Enter a number:  "
+    echo "Enter a number."
     read NUM
     ALPHA=$RANDOM
     OMEGA=$RANDOM
@@ -53,55 +50,36 @@ roll() {
 
 resolve() {
     if [[ $MONSTER -eq $NUM ]]; then
-        cat << EOF
-You dodge an attack, but you miss your mark as a result.
-Roll again...
-
-EOF
-	    roll
+	echo "You dodge an attack, but you miss your mark as a result."
+	echo "Roll again..."
+	roll
     fi
     
     if [[ $MONSTER -lt $NUM ]]; then
-        cat << EOF
-A hit! A palpable hit!  You have slain the spirit of the
-evil wizard.
-
-EOF
-        cat << EOF > treasure
-#!/bin/bash
-if ! grep  --quiet --only-matching emerald <<< \$I; then
-    cat << eof
-You have found an *emerald*!  Add it to your inventory.
-
-eof
-else
-    cat << eof
-This treasure has already been taken.
-
-eof
-fi
-EOF
+       echo "A hit! A palpable hit!"
+       echo "You have slain the spirit of the evil wizard."
+       echo '#!/bin/bash
+            if ! grep  --only-matching emerald <<< $I &> /dev/null; then
+                echo "You have found an *emerald*!"
+                echo "Add it to your inventory."
+            else
+                echo "This treasure has already been taken."
+            fi' > treasure
        chmod +x treasure
-       cat << EOF > platinum
-#!/bin/bash
-if ! grep  --quiet --only-matching platinum <<< \$I; then
-    cat << eof
-You have found a sack full of *platinum* coins!  Add it to
-your inventory.
-
-eof
-else
-    cat << eof
-This treasure has already been taken.
-
-eof
-
-fi
-EOF
-        chmod +x platinum
+       echo '#!/bin/bash
+             if ! grep  --only-matching platinum <<< $I &> /dev/null; then
+                 echo "You have found a sack full of *platinum* coins!"
+                 echo "Add it to your inventory." 
+             else
+                 echo "This treasure has already been taken."
+             fi' > platinum
+       chmod +x platinum
     else
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 92fd301 (Converted multiline output to heredoc)
 	echo "Your sword swings harmlessly through the air."
 	echo "You take 5 points damage. Deduct this from your HP variable:"
 	echo 'let "HP=HP-5"'
@@ -116,6 +94,7 @@ EOF
     fi
 	printf "\n"
 	roll
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> parent of 8ac4ac9 (Merge branch 'master' of https://github.com/JesZeph/JZ-BashCrawl)
@@ -148,32 +127,29 @@ EOF
 =======
         resolve
 >>>>>>> parent of 8ac4ac9 (Merge branch 'master' of https://github.com/JesZeph/JZ-BashCrawl)
+=======
+>>>>>>> parent of 92fd301 (Converted multiline output to heredoc)
     fi
 }
 
-cat << EOF
-The room shakes, a gust of wind blasts you from nowhere.
-You sense that a presence has entered the room.  The pain
-you suddenly feel assures you that you are under attack by a
-ghostly entity!
+echo "The room shakes, a gust of wind blasts you from nowhere."
+echo "You sense that a presence has entered the room."
+echo "The pain you suddenly feel assures you that you are under attack by a ghostly entity!"
+printf "\n"
 
-If you have a sword, you can attack.  Otherwise, you should
-run.  
-
-EOF
-printf "Do you want to attack? y/n  "
+echo "If you have a sword, you can attack."
+echo "Otherwise, you should run."
+echo "Do you want to attack? y/n"
 read RESP
 
 if [ "$RESP" = "y" -o "$RESP" = "Y" ];then
     roll
     resolve
 else
-    cat << EOF
-You wisely turn and flee.  Quickly cd to the previous
-directory.
-
-EOF
+    echo "You wisely turn and flee."
+    echo "Quickly cd to the previous directory."
 fi
+printf "\n"
 
 
 
